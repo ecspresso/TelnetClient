@@ -548,8 +548,8 @@ except:
 		'Domain:': '',
 		'Auth:': '',
 		'Username:': '',
-		'Password :': '',
-		'MAIL FROM :': '',
+		'Password:': '',
+		'MAIL FROM:': '',
 		'RCPT TO:': '',
 		'Data:': '',
 		'(Data) From:': '',
@@ -736,20 +736,105 @@ valContFrame = Frame(root, border=4, relief='ridge', pady=5, padx=3, background=
 valContFrame.grid(row=2, column=1, sticky='WE')
 
 
-row = 1
-column = 1
-for ele in data:
-	if column > 7:
-		row += 1
-		column = 1
+# row 1
+Label(valContFrame, text="Host:", fg='white', bg='black').grid(row=1, column=1)
+try:
+	Entry(valContFrame, textvariable=StringVar(value=data["Host:"])).grid(row=1, column=2)
+except:
+	Entry(valContFrame, textvariable=StringVar()).grid(row=1, column=2)
 
-	var = StringVar()
-	var.set(data[ele])
+Label(valContFrame, text="Port:", fg='white', bg='black').grid(row=1, column=3)
+try:
+	Entry(valContFrame, textvariable=StringVar(value=data["Port:"])).grid(row=1, column=4)
+except:
+	Entry(valContFrame, textvariable=StringVar()).grid(row=1, column=4)
 
-	Label(valContFrame, text=ele, fg='white', bg='black').grid(row=row, column=column)
-	column += 1
-	Entry(valContFrame, textvariable=var).grid(row=row, column=column)
-	column += 1
+Label(valContFrame, text="HELO/EHLO:", fg='white', bg='black').grid(row=1, column=5)
+try:
+	Entry(valContFrame, textvariable=StringVar(value=data["HELO/EHLO:"])).grid(row=1, column=6)
+except:
+	Entry(valContFrame, textvariable=StringVar()).grid(row=1, column=6)
+
+Label(valContFrame, text="Domain:", fg='white', bg='black').grid(row=1, column=7)
+try:
+	Entry(valContFrame, textvariable=StringVar(value=data["Domain:"])).grid(row=1, column=8)
+except:
+	Entry(valContFrame, textvariable=StringVar()).grid(row=1, column=8)
+
+# row 2
+Label(valContFrame, text="Auth:", fg='white', bg='black').grid(row=2, column=1)
+try:
+	Entry(valContFrame, textvariable=StringVar(value=data["Auth:"])).grid(row=2, column=2)
+except:
+	Entry(valContFrame, textvariable=StringVar()).grid(row=2, column=2)
+
+Label(valContFrame, text="Username:", fg='white', bg='black').grid(row=2, column=3)
+try:
+	Entry(valContFrame, textvariable=StringVar(value=data["Username:"])).grid(row=2, column=4)
+except:
+	Entry(valContFrame, textvariable=StringVar()).grid(row=2, column=4)
+
+Label(valContFrame, text="Password:", fg='white', bg='black').grid(row=2, column=5)
+try:
+	Entry(valContFrame, textvariable=StringVar(value=data["Password:"])).grid(row=2, column=6)
+except:
+	Entry(valContFrame, textvariable=StringVar()).grid(row=2, column=6)
+
+Label(valContFrame, text="MAIL FROM:", fg='white', bg='black').grid(row=2, column=7)
+try:
+	Entry(valContFrame, textvariable=StringVar(value=data["MAIL FROM:"])).grid(row=2, column=8)
+except:
+	Entry(valContFrame, textvariable=StringVar()).grid(row=2, column=8)
+
+# row 3
+Label(valContFrame, text="RCPT TO:", fg='white', bg='black').grid(row=3, column=1)
+try:
+	Entry(valContFrame, textvariable=StringVar(value=data["RCPT TO:"])).grid(row=3, column=2)
+except:
+	Entry(valContFrame, textvariable=StringVar()).grid(row=3, column=2)
+
+Label(valContFrame, text="Data:", fg='white', bg='black').grid(row=3, column=3)
+try:
+	Entry(valContFrame, textvariable=StringVar(value=data["Data:"])).grid(row=3, column=4)
+except:
+	Entry(valContFrame, textvariable=StringVar()).grid(row=3, column=4)
+
+Label(valContFrame, text="(Data) From:", fg='white', bg='black').grid(row=3, column=5)
+try:
+	Entry(valContFrame, textvariable=StringVar(value=data["(Data) From:"])).grid(row=3, column=6)
+except:
+	Entry(valContFrame, textvariable=StringVar()).grid(row=3, column=6)
+
+Label(valContFrame, text="(Data) Sender:", fg='white', bg='black').grid(row=3, column=7)
+try:
+	Entry(valContFrame, textvariable=StringVar(value=data["(Data) Sender:"])).grid(row=3, column=8)
+except:
+	Entry(valContFrame, textvariable=StringVar()).grid(row=3, column=8)
+
+# row 4
+Label(valContFrame, text="(Data) To:", fg='white', bg='black').grid(row=4, column=1)
+try:
+	Entry(valContFrame, textvariable=StringVar(value=data["(Data) To:"])).grid(row=4, column=2)
+except:
+	Entry(valContFrame, textvariable=StringVar()).grid(row=4, column=2)
+
+Label(valContFrame, text="(Data) Subject:", fg='white', bg='black').grid(row=4, column=3)
+try:
+	Entry(valContFrame, textvariable=StringVar(value=data["(Data) Subject:"])).grid(row=4, column=4)
+except:
+	Entry(valContFrame, textvariable=StringVar()).grid(row=4, column=4)
+
+Label(valContFrame, text="(Data) Content:", fg='white', bg='black').grid(row=4, column=5)
+try:
+	Entry(valContFrame, textvariable=StringVar(value=data["(Data) Content:"])).grid(row=4, column=6)
+except:
+	Entry(valContFrame, textvariable=StringVar()).grid(row=4, column=6)
+
+Label(valContFrame, text="Quit:", fg='white', bg='black').grid(row=4, column=7)
+try:
+	Entry(valContFrame, textvariable=StringVar(value=data["Quit:"])).grid(row=4, column=8)
+except:
+	Entry(valContFrame, textvariable=StringVar()).grid(row=4, column=8)
 
 # KNAPPAR - funktioner
 bOpen = Button(buttonFrame, text='OPEN', command=lambda:topen(valContFrame.winfo_children()[1].get(), valContFrame.winfo_children()[3].get()))
